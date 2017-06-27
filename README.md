@@ -1,23 +1,22 @@
 # GRPC Everywhere for PHP
 
-Documentation will be soon. Simple example below.
+# Usage
 
-Install via composer:
-```bash
-composer require shumkov/grpc-everywhere
-```
-
-Append psr7 middleware to your PHP application:
+1. Compile your proto file for PHP and require files
+2. Install library via composer `composer require shumkov/grpc-everywhere`
+3. Append psr7 middleware to your PHP application:
 
 ```php
-$application = new \App\Application();
+require_once 'vendor/autoload.php'
+
+$application = new \ExampleApp\Application();
 
 $service = new \GrpcEverywhere\Service(
     'test.greeter',
     'Greeter'
 );
 
-$service->setHandler('sayHello', new \App\SayHelloHandler());
+$service->setHandler('sayHello', new \ExampleApp\SayHelloHandler());
 
 $application->add(new \GrpcEverywhere\Middleware(
     $service,
@@ -29,6 +28,8 @@ $application->add(new \GrpcEverywhere\Middleware(
 
 $application->run();
 ```
+
+Read code and have fun. Documentation will be soon.
 
 ## MIT License
 
