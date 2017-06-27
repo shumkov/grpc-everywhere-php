@@ -2,6 +2,11 @@
 
 Documentation will be soon. Simple example below.
 
+Install via composer:
+```bash
+composer require shumkov/grpc-everywhere
+```
+
 Append psr7 middleware to your PHP application:
 
 ```php
